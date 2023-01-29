@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Рассказ о себе</title>
+    <style>
+    .inline {
+        display: inline-block;
+        color: white;
+        background: #8c3ead;
+        margin: 10px;
+        padding: 5px;
+    }
+    .invisible {
+        display: none;
+    }   
+    .item_1 {
+        width: 100px;
+        height: 100px;
+        background: #00bfff;
+        border: 1px solid black;
+        padding: 10px;
+    }
+    .relative {
+        position: relative;
+        top: -10px;
+        left: 15px;
+    }
+    .absolute {
+        position: absolute;
+        top: 180px;
+        left: 100px;
+    }
+    .fixed {
+        position: fixed;
+        left: 270px;
+    }
+    .flex-container {
+        display: flex;
+        font-size: 20px;
+        flex-flow: row-reverse wrap-reverse;
+        width: 100px;
+        border: 1px dotted blue;
+        margin: 20px 10px;
+        padding: 10px;
+    }
+
+    .item {
+        border: 1px solid white;
+        background: lightgreen;
+        padding: 5px;
+        color: green;
+    }
+    </style>
+</head>
+
+<body>
+<div>
+  <div class="inline">
+    Я 1-ый инлайн блок
+  </div>
+  <div class="inline">
+    Я 2-ой инлайн блок
+  </div>
+</div>
+<div style="margin: 10px;">
+  тут невидимый блок внизу
+  <div class="invisible">
+    Я невидимый блок :)
+  </div>
+</div>
+<div>
+  <div class="item_1 "> статичный </div>
+  <div class="item_1 fixed"> фиксирванный </div>
+  <div class="item_1 relative"> относительный </div>
+  <div class="item_1 absolute"> абсолютный </div>
+  <div class="item_1"> статичный </div>
+</div>
+<div class="flex-container">
+  <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+  <div class="item">4</div>
+  <div class="item">5</div>
+  <div class="item">6</div>
+  <div class="item">7</div>
+  <div class="item">8</div>
+  <div class="item">9</div>
+</div>
+</body>
+
+</html>

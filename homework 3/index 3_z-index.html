@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  position: relative;
+}
+
+.main-block {
+  position: relative;
+  z-index: 1;
+  border: 2px solid black;
+  height: 200px;
+  margin: 120px 40px;
+  padding: 20px;
+}
+
+.green-block {
+  position: absolute;
+  z-index: 2; 
+  background: green;
+  width: 40%;
+  left: 235px;
+  top: -40px;
+  height: 20px;
+  padding: 20px;
+}
+  
+.lightgreen-block {
+  position: absolute;
+  z-index: 3; 
+  background: lightgreen;
+  height: 100px;  
+  width: 40%;
+  left: 255px;
+  top: 10px;
+  padding: 20px;
+}
+  
+  
+.yellow-block {
+  position: absolute;
+  z-index:-1; 
+  background: yellow;
+  width: 20%;
+  left: 10px;
+  top: 50px;
+  height: 40px;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="main-block">Выберем основной блок, где z-index: 1</div>
+  <div class="lightgreen-block">Светлозеленый блок, где z-index: 3</div>
+  <div class="green-block">Зеленый блок, где z-index: 2</div>
+  <div class="yellow-block">Желтый блок, где z-index: -1</div>
+</div>
+
+</body>
+</html>
