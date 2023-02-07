@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Картинки с flex</title>
+    <style>
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;        
+    }
+    body {
+        font-family: sans-serif;
+    }
+    .container {
+        width: 90%;
+        margin: 50px auto;
+    }
+    .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-flow: wrap;
+        align-items: flex-start;
+    }
+    .card {
+        width: 30%;
+        background: linear-gradient(to right, #5441ff, #55ffe3);
+        border: 2px solid #ccc;
+        margin-bottom: 50px;
+        border-radius: 20px;
+    }
+    .card-body {
+        padding: 30px 20px;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .card-body .card-header {
+        text-align: center;
+        padding: 20px 10px;
+        color: #fff;
+    }
+    .card-body .card-img {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .card-body .card-img img {
+        border-radius: 20px;
+        width: 100%;
+        height: 15rem;
+        object-fit: cover;
+    }
+    .card-body .card-text p {
+        display: block;
+        border-radius: 20px;
+        background:#b7bca0;
+        border: 2px solid #ccc;
+        padding: 10px;
+        position:relative;
+        height: 100%;
+        color: rgb(68, 60, 60);
+    }
+    .card-body .btn a {
+        border: 2px solid #ccc;
+        position:relative;
+        display: block;
+        color: black;
+        text-align: center;
+        background: rgb(239, 113, 67);
+        padding: 10px 5px;
+        text-decoration: none;
+        margin: 20px 5px;
+        border-radius: 10px;
+    }
+    
+
+    @media screen and (max-width: 1000px){
+        .card {
+            width: 40%;
+        }
+    }
+
+    @media screen and (max-width: 800px){
+        .container{
+            width: 100%;
+        }
+        .card {
+            width: 80%;
+        }
+    }
+
+
+    @media screen and (max-width: 450px){
+        .card-body .card-header {
+            font-size: 16px;
+        }
+        .container{
+            width: 100%;
+        }
+        .card {
+            width: 90%;
+        }
+    }
+    </style>
+</head>
+
+<body>
+<div class="container">
+        <div class="row">
+          <div class="card">
+            <div class="card-body">
+                <div class="card-img">
+                    <img src="https://www.soleans.ru/wp-content/uploads/Capitol-Habana-Cuba.jpg" alt="Капитолий">
+                </div>
+                <div class="card-header">
+                    <h1>Капитолий</h1>
+                </div>
+                <div class="card-text">
+                    <p>Здание парламента Кубы, было построено в 1929 году и выполняло свои функции до 1959 года. В настоящее время используется в качестве конгресс-центра и открыто для доступа посетителей. В Капитолии также размещается штаб-квартира министерства науки, технологии и окружающей среды и Академии наук Кубы.</p>
+                </div>
+                <div class="btn">
+                    <a href="#">Подробнее</a>
+                </div>
+            </div>
+          </div>  
+          <div class="card">
+            <div class="card-body">
+                <div class="card-img">
+                    <img src="https://pro-dachnikov.com/uploads/posts/2021-10/1633615029_2-p-dom-khemingueya-na-kube-foto-2.jpg" alt="Дом Хеменгуэя">
+                </div>
+                <div class="card-header">
+                    <h1>Дом Э.Хеменгуэя</h1>
+                </div>
+                <div class="card-text">
+                    <p>Единственный дом, принадлежавший Эрнесту Хемингуэю вне территории США, в котором писатель с перерывами жил около 20 лет и где он работал над известными произведениями, в том числе романом «По ком звонит колокол» и повестью «Старик и море».Особняк был построен в конце 1880-х годов каталонским архитектором Мигелем Паскуале Багером.</p>
+                </div>
+                <div class="btn">
+                    <a href="#">Подробнее</a>
+                </div>
+            </div>
+          </div>  
+          <div class="card">
+            <div class="card-body">
+                <div class="card-img">
+                    <img src="https://fs.tonkosti.ru/bl/6a/bl6aommud80s004gowso88004.jpg" alt="Мемориал Хосе Марти">
+                </div>
+                <div class="card-header">
+                    <h1>Мемориал Х.Марти</h1>
+                </div>
+                <div class="card-text">
+                    <p>Памятник национальному герою Кубы, расположенный на северной стороне площади Революции в Ведадо - фешенебельного района Гаваны. Мемориал состоит из звездной башни, статуи Хосе Марти и окружен шестью колоннами и садами, разбитыми вокруг комплекса. </p>
+                </div>
+                <div class="btn">
+                    <a href="#">Подробнее</a>
+                </div>
+            </div>
+          </div>  
+    </div>
+</div>
+</body>
+
+</html>
