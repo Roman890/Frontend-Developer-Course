@@ -3,14 +3,14 @@
 
 let pancakesWithJam = {
     name: "Блины с повидлом",
-    ingredients: [ 
+    ingredients: [
         { nameIngredient: "milk", weight: 500 },
         { nameIngredient: "water", weight: 100 },
         { nameIngredient: "eggs", weight: 100 },
         { nameIngredient: "sugar", weight: 50 },
         { nameIngredient: "salt", weight: 30 },
         { nameIngredient: "flour", weight: 400 },
-        { nameIngredient: "oil", weight: 100 }, 
+        { nameIngredient: "oil", weight: 100 },
         { nameIngredient: "jam", weight: 200 }
     ], // список объектов ингредиентов с весом в граммах
     priceCooking: 0,
@@ -19,14 +19,14 @@ let pancakesWithJam = {
 
 let pancakesWithCheese = {
     name: "Блины с сыром",
-    ingredients: [ 
+    ingredients: [
         { nameIngredient: "milk", weight: 500 },
         { nameIngredient: "water", weight: 100 },
         { nameIngredient: "eggs", weight: 100 },
         { nameIngredient: "sugar", weight: 50 },
         { nameIngredient: "salt", weight: 30 },
         { nameIngredient: "flour", weight: 400 },
-        { nameIngredient: "oil", weight: 100 }, 
+        { nameIngredient: "oil", weight: 100 },
         { nameIngredient: "cheese", weight: 300 }
     ],
     priceCooking: 0,
@@ -35,14 +35,14 @@ let pancakesWithCheese = {
 
 let pancakesWithCottageCheese = {
     name: "Блины с творогом",
-    ingredients: [ 
+    ingredients: [
         { nameIngredient: "milk", weight: 500 },
         { nameIngredient: "water", weight: 100 },
         { nameIngredient: "eggs", weight: 100 },
         { nameIngredient: "sugar", weight: 50 },
         { nameIngredient: "salt", weight: 30 },
         { nameIngredient: "flour", weight: 400 },
-        { nameIngredient: "oil", weight: 100 }, 
+        { nameIngredient: "oil", weight: 100 },
         { nameIngredient: "cottageCheese", weight: 300 }
     ],
     priceCooking: 0,
@@ -51,14 +51,14 @@ let pancakesWithCottageCheese = {
 
 let pancakesWithMeat = {
     name: "Блины с мясом",
-    ingredients: [ 
+    ingredients: [
         { nameIngredient: "milk", weight: 500 },
         { nameIngredient: "water", weight: 100 },
         { nameIngredient: "eggs", weight: 100 },
         { nameIngredient: "sugar", weight: 50 },
         { nameIngredient: "salt", weight: 30 },
         { nameIngredient: "flour", weight: 400 },
-        { nameIngredient: "oil", weight: 100 }, 
+        { nameIngredient: "oil", weight: 100 },
         { nameIngredient: "meat", weight: 300 }
     ],
     priceCooking: 0,
@@ -67,14 +67,14 @@ let pancakesWithMeat = {
 
 let pancakesWithSalmon = {
     name: "Блины с лососем",
-    ingredients: [ 
+    ingredients: [
         { nameIngredient: "milk", weight: 500 },
         { nameIngredient: "water", weight: 100 },
         { nameIngredient: "eggs", weight: 100 },
         { nameIngredient: "sugar", weight: 50 },
         { nameIngredient: "salt", weight: 30 },
         { nameIngredient: "flour", weight: 400 },
-        { nameIngredient: "oil", weight: 100 }, 
+        { nameIngredient: "oil", weight: 100 },
         { nameIngredient: "salmon", weight: 400 }
     ],
     priceCooking: 0,
@@ -83,14 +83,14 @@ let pancakesWithSalmon = {
 
 let pancakesWithBananas = {
     name: "Блины с бананом",
-    ingredients: [ 
+    ingredients: [
         { nameIngredient: "milk", weight: 500 },
         { nameIngredient: "water", weight: 100 },
         { nameIngredient: "eggs", weight: 100 },
         { nameIngredient: "sugar", weight: 50 },
         { nameIngredient: "salt", weight: 30 },
         { nameIngredient: "flour", weight: 400 },
-        { nameIngredient: "oil", weight: 100 }, 
+        { nameIngredient: "oil", weight: 100 },
         { nameIngredient: "bananas", weight: 200 }
     ],
     priceCooking: 0,
@@ -99,14 +99,14 @@ let pancakesWithBananas = {
 
 let pancakesWithChocolate = {
     name: "Блины с шоколадом",
-    ingredients: [ 
+    ingredients: [
         { nameIngredient: "milk", weight: 500 },
         { nameIngredient: "water", weight: 100 },
         { nameIngredient: "eggs", weight: 100 },
         { nameIngredient: "sugar", weight: 50 },
         { nameIngredient: "salt", weight: 30 },
         { nameIngredient: "flour", weight: 400 },
-        { nameIngredient: "oil", weight: 100 }, 
+        { nameIngredient: "oil", weight: 100 },
         { nameIngredient: "chocolate", weight: 200 }
     ],
     priceCooking: 0,
@@ -148,11 +148,11 @@ let ingredientsPrices = {
 // Так же добавь в ингредиенты вес и учитывай его при расчете себестоимости
 
 //Функция расчета себестоимости блюд c учетом веса и стоимости (надеюсь правильно понял про замыкание)
-function countPriceCooking(ingredientsPrices) {
+function countPriceCooking(_ingredientsPrices) {
     return function (ingredients) {
         let sum = 0;
         for (let j = 0; j < ingredients.length; j++) {
-            sum += ingredientsPrices[ingredients[j]['nameIngredient']] * ingredients[j]['weight'] / 1000;
+            sum += _ingredientsPrices[ingredients[j]['nameIngredient']] * ingredients[j]['weight'] / 1000;
         };
         return sum;
     }
