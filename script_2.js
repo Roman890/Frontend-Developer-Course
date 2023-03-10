@@ -8,7 +8,7 @@ let pancakesWithJam = {
         { nameIngredient: "water", weight: 100 },
         { nameIngredient: "eggs", weight: 100 },
         { nameIngredient: "sugar", weight: 50 },
-        { nameIngredient: "salt", weight: 30 },
+        { nameIngredient: "salt", weight: 20 },
         { nameIngredient: "flour", weight: 400 },
         { nameIngredient: "oil", weight: 100 },
         { nameIngredient: "jam", weight: 200 }
@@ -24,7 +24,7 @@ let pancakesWithCheese = {
         { nameIngredient: "water", weight: 100 },
         { nameIngredient: "eggs", weight: 100 },
         { nameIngredient: "sugar", weight: 50 },
-        { nameIngredient: "salt", weight: 30 },
+        { nameIngredient: "salt", weight: 20 },
         { nameIngredient: "flour", weight: 400 },
         { nameIngredient: "oil", weight: 100 },
         { nameIngredient: "cheese", weight: 300 }
@@ -40,7 +40,7 @@ let pancakesWithCottageCheese = {
         { nameIngredient: "water", weight: 100 },
         { nameIngredient: "eggs", weight: 100 },
         { nameIngredient: "sugar", weight: 50 },
-        { nameIngredient: "salt", weight: 30 },
+        { nameIngredient: "salt", weight: 20 },
         { nameIngredient: "flour", weight: 400 },
         { nameIngredient: "oil", weight: 100 },
         { nameIngredient: "cottageCheese", weight: 300 }
@@ -56,7 +56,7 @@ let pancakesWithMeat = {
         { nameIngredient: "water", weight: 100 },
         { nameIngredient: "eggs", weight: 100 },
         { nameIngredient: "sugar", weight: 50 },
-        { nameIngredient: "salt", weight: 30 },
+        { nameIngredient: "salt", weight: 20 },
         { nameIngredient: "flour", weight: 400 },
         { nameIngredient: "oil", weight: 100 },
         { nameIngredient: "meat", weight: 300 }
@@ -72,7 +72,7 @@ let pancakesWithSalmon = {
         { nameIngredient: "water", weight: 100 },
         { nameIngredient: "eggs", weight: 100 },
         { nameIngredient: "sugar", weight: 50 },
-        { nameIngredient: "salt", weight: 30 },
+        { nameIngredient: "salt", weight: 20 },
         { nameIngredient: "flour", weight: 400 },
         { nameIngredient: "oil", weight: 100 },
         { nameIngredient: "salmon", weight: 400 }
@@ -88,7 +88,7 @@ let pancakesWithBananas = {
         { nameIngredient: "water", weight: 100 },
         { nameIngredient: "eggs", weight: 100 },
         { nameIngredient: "sugar", weight: 50 },
-        { nameIngredient: "salt", weight: 30 },
+        { nameIngredient: "salt", weight: 20 },
         { nameIngredient: "flour", weight: 400 },
         { nameIngredient: "oil", weight: 100 },
         { nameIngredient: "bananas", weight: 200 }
@@ -104,7 +104,7 @@ let pancakesWithChocolate = {
         { nameIngredient: "water", weight: 100 },
         { nameIngredient: "eggs", weight: 100 },
         { nameIngredient: "sugar", weight: 50 },
-        { nameIngredient: "salt", weight: 30 },
+        { nameIngredient: "salt", weight: 20 },
         { nameIngredient: "flour", weight: 400 },
         { nameIngredient: "oil", weight: 100 },
         { nameIngredient: "chocolate", weight: 200 }
@@ -124,8 +124,8 @@ let meals = [
     pancakesWithChocolate
 ];
 
-//Отдельно создайте объект хранящий стоимость этих ингредиентов указана за 1000 граммов
-let ingredientsPrices = {
+//Отдельно создайте объекты хранящие стоимость этих ингредиентов ( указана за 1000 граммов)
+let ingredientsPrices1 = {
     milk: 80,
     water: 50,
     eggs: 70,
@@ -142,6 +142,23 @@ let ingredientsPrices = {
     chocolate: 60
 };
 
+let ingredientsPrices2 = {
+    milk: 100,
+    water: 80,
+    eggs: 90,
+    sugar: 80,
+    salt: 30,
+    flour: 140,
+    oil: 120,
+    jam: 80,
+    cheese: 380,
+    cottageCheese: 400,
+    meat: 900,
+    salmon: 1000,
+    bananas: 100,
+    chocolate: 80
+};
+
 //сделать функцию, в которую передаешь ингредиенты блюда, а она должна вернуть себестоимость этого блюда
 //Для усложнения задачи попробуй создать фукцию-замыкание, которую ты можешь создать, вызвав функцию-фабрику 
 //и передав в нее обьект с ценой всех ингредиентов.
@@ -156,24 +173,39 @@ function countPriceCooking(_ingredientsPrices) {
         };
         return sum;
     }
+}
 
+//Функция вывода себестоимости
+function printResultPriceCooking(header, _meals) {
+    let resultText = header + '\n'
+    for (let i = 0; i < _meals.length; i++) {
+        resultText += `Блюдо: ${_meals[i].name} ; Себестоимость: ${_meals[i].priceCooking}\n`;
+    };
+    console.log(resultText);
 }
 
 // вызываем родительскую функцию, где передаем объект со стоимостью ингредиентов
-let estimate = countPriceCooking(ingredientsPrices)
+let estimate1 = countPriceCooking(ingredientsPrices1);
 
 for (let i = 0; i < meals.length; i++) {
-    meals[i].priceCooking = estimate(meals[i].ingredients);
+    meals[i].priceCooking = estimate1(meals[i].ingredients);
 };
 
-console.log(`Массив из объектов блюд c себестоимостью: ${JSON.stringify(meals)}`);
+printResultPriceCooking(`Массив из объектов блюд c себестоимостью по смете 1:`, meals);
 
+let estimate2 = countPriceCooking(ingredientsPrices2)
+
+for (let i = 0; i < meals.length; i++) {
+    meals[i].priceCooking = estimate2(meals[i].ingredients);
+};
+
+printResultPriceCooking(`Массив из объектов блюд c себестоимостью по смете 2:`, meals);
 
 
 // то что осталось от предыдущего задания по функциям с рассчетом профита
 // создали функция для посчета профита от продажи блюда
 function countProfit(priceSale, priceCooking) {
-    return priceSale - priceCooking;
+    return (priceSale - priceCooking).toFixed(1);
 }
 
 
