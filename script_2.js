@@ -35,6 +35,7 @@ while (true) {
     };
 }
 
+
 // основной цикл с логином и паролем
 while (nextStep) {
     let objectInputOutput = {
