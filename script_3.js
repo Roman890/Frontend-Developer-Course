@@ -17,6 +17,7 @@ let englishToRussian = {
     'Something went wrong, repeat later!': 'Что-то пошло не так, повторите позднее!'
 };
 
+
 // объект словарь с переводом с английского на французский
 let englishToFrench = {
     'Enter login:': 'Entrez votre nom d\'utilisateur:',
