@@ -6,33 +6,30 @@
 // то возвращает исходную фразу на англ языке. Для вывода любой информации пользователю, 
 //должна использоваться эта функция
 
-// объект словарь с переводом с английского на русский
-let englishToRussian = {
-    'Enter login:': 'Введите имя пользователя:',
-    'Enter password:': 'Введите пароль:',
-    'The result of the code: There is no such user\nRepeat the input!': 'Результат работы кода: Такого пользователя не существует\nПовторите ввод!',
-    'The result of the code: Incorrect password\nRepeat the input!': 'Результат работы кода: Неправильный пароль\nПовторите ввод!',
-    'The result of the code: Error in data processing\nRepeat the input!': 'Результат работы кода: Ошибка в обработке данных\nПовторите ввод!',
-    'The result of the code: You are logged in\nWelcome!': 'Результат работы кода: Вы вошли\nДобро пожаловать!',
-    'Something went wrong, repeat later!': 'Что-то пошло не так, повторите позднее!'
+const translations = {
+    'en_ru': {
+        'Enter login:': 'Введите имя пользователя:',
+        'Enter password:': 'Введите пароль:',
+        'The result of the code: There is no such user\nRepeat the input!': 'Результат работы кода: Такого пользователя не существует\nПовторите ввод!',
+        'The result of the code: Incorrect password\nRepeat the input!': 'Результат работы кода: Неправильный пароль\nПовторите ввод!',
+        'The result of the code: Error in data processing\nRepeat the input!': 'Результат работы кода: Ошибка в обработке данных\nПовторите ввод!',
+        'The result of the code: You are logged in\nWelcome!': 'Результат работы кода: Вы вошли\nДобро пожаловать!',
+        'Something went wrong, repeat later!': 'Что-то пошло не так, повторите позднее!'
+    },
+    'en_fr': {
+        'Enter login:': 'Entrez votre nom d\'utilisateur:',
+        'Enter password:': 'Entrez le mot de passe:',
+        'The result of the code: There is no such user\nRepeat the input!': 'Résultat du code: un tel utilisateur n\'existe pas.\nRépétez la saisie!',
+        'The result of the code: Incorrect password\nRepeat the input!': 'Résultat du code: mot de passe Incorrect\nRépétez la saisie!',
+        'The result of the code: Error in data processing\nRepeat the input!': 'Résultat du code: Erreur dans le traitement des données\nRépétez la saisie!',
+        'The result of the code: You are logged in\nWelcome!': 'Résultat du code: vous êtes connecté\nBienvenue !',
+        'Something went wrong, repeat later!': 'Quelque chose a mal tourné, répétez plus tard!'
+    }
 };
-
-
-// объект словарь с переводом с английского на французский
-let englishToFrench = {
-    'Enter login:': 'Entrez votre nom d\'utilisateur:',
-    'Enter password:': 'Entrez le mot de passe:',
-    'The result of the code: There is no such user\nRepeat the input!': 'Résultat du code: un tel utilisateur n\'existe pas.\nRépétez la saisie!',
-    'The result of the code: Incorrect password\nRepeat the input!': 'Résultat du code: mot de passe Incorrect\nRépétez la saisie!',
-    'The result of the code: Error in data processing\nRepeat the input!': 'Résultat du code: Erreur dans le traitement des données\nRépétez la saisie!',
-    'The result of the code: You are logged in\nWelcome!': 'Résultat du code: vous êtes connecté\nBienvenue !',
-    'Something went wrong, repeat later!': 'Quelque chose a mal tourné, répétez plus tard!'
-};
-
 
 // фунция проверки логина и пароля
 function checkLoginPass(_login, _pass) {
-    correctValues = {
+    let correctValues = {
         'roman': '2711',
         'admin': 'root',
         'user': '1234'
@@ -57,7 +54,6 @@ function translator(languageDictionary = {}) {
     };
 };
 
-
 let nextStep = false;
 let language = 0;
 let chooseLanguage = null;
@@ -65,24 +61,17 @@ let chooseLanguage = null;
 // цикл по проверке языка
 while (true) {
     language = parseInt(prompt('Choose language\n1 - ru\n2 - en\n3 - fr\n'));
-    switch (language) {
-        case 1:
-            nextStep = true;
-            chooseLanguage = translator(englishToRussian); // вызываем родительскую функцию, где передаем объект со словарем выранного языка
-            break;
-        case 2:
-            nextStep = true;
-            chooseLanguage = translator(); // вызываем родительскую функцию, где не передаем объект со словарем выранного языка, по умолчанию пустой объект
-            break;
-        case 3:
-            nextStep = true;
-            chooseLanguage = translator(englishToFrench); // вызываем родительскую функцию, где передаем объект со словарем выранного языка
-            break;
-        default:
-            alert('Incorrect input!');
+    let codeLanguages = {
+        1: 'en_ru',
+        2: null,
+        3: 'en_fr'
     };
-    if (nextStep) {
+    chooseLanguage = translator(translations[codeLanguages[language]]);
+    if (language in codeLanguages) {
+        nextStep = true;
         break;
+    } else {
+        alert('Incorrect input!');
     }
 };
 
@@ -96,21 +85,14 @@ while (nextStep) {
     objectInputOutput.login = prompt(chooseLanguage('Enter login:'), 'user');
     objectInputOutput.password = prompt(chooseLanguage('Enter password:'));
     objectInputOutput.result = checkLoginPass(objectInputOutput.login, objectInputOutput.password);
-    switch (objectInputOutput.result) {
-        case 'NO_USER':
-            alert(chooseLanguage('The result of the code: There is no such user\nRepeat the input!'));
-            break;
-        case 'ERROR_PASS':
-            alert(chooseLanguage('The result of the code: Incorrect password\nRepeat the input!'));
-            break;
-        case 'ERROR_DATA':
-            alert(chooseLanguage('The result of the code: Error in data processing\nRepeat the input!'));
-            break;
-        case 'SUCCESS':
-            alert(chooseLanguage('The result of the code: You are logged in\nWelcome!'));
-            nextStep = false;
-            break;
-        default:
-            alert(chooseLanguage('Something went wrong, repeat later!'));
-    };
+    let codeMessages = {
+        'NO_USER': 'The result of the code: There is no such user\nRepeat the input!',
+        'ERROR_PASS': 'The result of the code: Incorrect password\nRepeat the input!',
+        'ERROR_DATA': 'The result of the code: Error in data processing\nRepeat the input!',
+        'SUCCESS': 'The result of the code: You are logged in\nWelcome!',
+    }
+    alert(chooseLanguage(codeMessages[objectInputOutput.result]) || chooseLanguage('Something went wrong, repeat later!'));
+    if (objectInputOutput.result === 'SUCCESS') {
+        nextStep = false;
+    }
 }
