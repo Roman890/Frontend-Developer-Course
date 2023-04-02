@@ -1,5 +1,5 @@
 import { checkLoginPass } from './checkLoginPassword.js'
-import { translator } from './translator.js'
+import { translator } from '../scripts/translator.js'
 
 
 const translations = {
