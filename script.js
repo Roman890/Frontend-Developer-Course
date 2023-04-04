@@ -11,14 +11,14 @@
 let pancakesWithJam = {
     name: "Блины с повидлом",
     ingredients: [
-        { nameIngredient: "milk", weight: 500 },
-        { nameIngredient: "water", weight: 100 },
-        { nameIngredient: "eggs", weight: 100 },
-        { nameIngredient: "sugar", weight: 50 },
-        { nameIngredient: "salt", weight: 20 },
-        { nameIngredient: "flour", weight: 400 },
-        { nameIngredient: "oil", weight: 100 },
-        { nameIngredient: "jam", weight: 200 }
+        { nameIngredient: "milk", weight: 500, isVegans: false },
+        { nameIngredient: "water", weight: 100, isVegans: false },
+        { nameIngredient: "eggs", weight: 100, isVegans: false },
+        { nameIngredient: "sugar", weight: 50, isVegans: false },
+        { nameIngredient: "salt", weight: 20, isVegans: false },
+        { nameIngredient: "flour", weight: 400, isVegans: false },
+        { nameIngredient: "oil", weight: 100, isVegans: false },
+        { nameIngredient: "jam", weight: 200, isVegans: true }
     ], // список объектов ингредиентов с весом в граммах
     priceCooking: 0,
     priceSale: 300
@@ -27,14 +27,14 @@ let pancakesWithJam = {
 let pancakesWithCheese = {
     name: "Блины с сыром",
     ingredients: [
-        { nameIngredient: "milk", weight: 500 },
-        { nameIngredient: "water", weight: 100 },
-        { nameIngredient: "eggs", weight: 100 },
-        { nameIngredient: "sugar", weight: 50 },
-        { nameIngredient: "salt", weight: 20 },
-        { nameIngredient: "flour", weight: 400 },
-        { nameIngredient: "oil", weight: 100 },
-        { nameIngredient: "cheese", weight: 300 }
+        { nameIngredient: "milk", weight: 500, isVegans: false },
+        { nameIngredient: "water", weight: 100, isVegans: false },
+        { nameIngredient: "eggs", weight: 100, isVegans: false },
+        { nameIngredient: "sugar", weight: 50, isVegans: false },
+        { nameIngredient: "salt", weight: 20, isVegans: false },
+        { nameIngredient: "flour", weight: 400, isVegans: false },
+        { nameIngredient: "oil", weight: 100, isVegans: false },
+        { nameIngredient: "cheese", weight: 300, isVegans: false }
     ],
     priceCooking: 0,
     priceSale: 400
@@ -43,14 +43,14 @@ let pancakesWithCheese = {
 let pancakesWithCottageCheese = {
     name: "Блины с творогом",
     ingredients: [
-        { nameIngredient: "milk", weight: 500 },
-        { nameIngredient: "water", weight: 100 },
-        { nameIngredient: "eggs", weight: 100 },
-        { nameIngredient: "sugar", weight: 50 },
-        { nameIngredient: "salt", weight: 20 },
-        { nameIngredient: "flour", weight: 400 },
-        { nameIngredient: "oil", weight: 100 },
-        { nameIngredient: "cottageCheese", weight: 300 }
+        { nameIngredient: "milk", weight: 500, isVegans: false },
+        { nameIngredient: "water", weight: 100, isVegans: false },
+        { nameIngredient: "eggs", weight: 100, isVegans: false },
+        { nameIngredient: "sugar", weight: 50, isVegans: false },
+        { nameIngredient: "salt", weight: 20, isVegans: false },
+        { nameIngredient: "flour", weight: 400, isVegans: false },
+        { nameIngredient: "oil", weight: 100, isVegans: false },
+        { nameIngredient: "cottageCheese", weight: 300, isVegans: false }
     ],
     priceCooking: 0,
     priceSale: 450
@@ -59,14 +59,14 @@ let pancakesWithCottageCheese = {
 let pancakesWithMeat = {
     name: "Блины с мясом",
     ingredients: [
-        { nameIngredient: "milk", weight: 500 },
-        { nameIngredient: "water", weight: 100 },
-        { nameIngredient: "eggs", weight: 100 },
-        { nameIngredient: "sugar", weight: 50 },
-        { nameIngredient: "salt", weight: 20 },
-        { nameIngredient: "flour", weight: 400 },
-        { nameIngredient: "oil", weight: 100 },
-        { nameIngredient: "meat", weight: 300 }
+        { nameIngredient: "milk", weight: 500, isVegans: false },
+        { nameIngredient: "water", weight: 100, isVegans: false },
+        { nameIngredient: "eggs", weight: 100, isVegans: false },
+        { nameIngredient: "sugar", weight: 50, isVegans: false },
+        { nameIngredient: "salt", weight: 20, isVegans: false },
+        { nameIngredient: "flour", weight: 400, isVegans: false },
+        { nameIngredient: "oil", weight: 100, isVegans: false },
+        { nameIngredient: "meat", weight: 300, isVegans: false }
     ],
     priceCooking: 0,
     priceSale: 600
@@ -75,14 +75,14 @@ let pancakesWithMeat = {
 let pancakesWithSalmon = {
     name: "Блины с лососем",
     ingredients: [
-        { nameIngredient: "milk", weight: 500 },
-        { nameIngredient: "water", weight: 100 },
-        { nameIngredient: "eggs", weight: 100 },
-        { nameIngredient: "sugar", weight: 50 },
-        { nameIngredient: "salt", weight: 20 },
-        { nameIngredient: "flour", weight: 400 },
-        { nameIngredient: "oil", weight: 100 },
-        { nameIngredient: "salmon", weight: 400 }
+        { nameIngredient: "milk", weight: 500, isVegans: false },
+        { nameIngredient: "water", weight: 100, isVegans: false },
+        { nameIngredient: "eggs", weight: 100, isVegans: false },
+        { nameIngredient: "sugar", weight: 50, isVegans: false },
+        { nameIngredient: "salt", weight: 20, isVegans: false },
+        { nameIngredient: "flour", weight: 400, isVegans: false },
+        { nameIngredient: "oil", weight: 100, isVegans: false },
+        { nameIngredient: "salmon", weight: 400, isVegans: false }
     ],
     priceCooking: 0,
     priceSale: 800
@@ -91,14 +91,14 @@ let pancakesWithSalmon = {
 let pancakesWithBananas = {
     name: "Блины с бананом",
     ingredients: [
-        { nameIngredient: "milk", weight: 500 },
-        { nameIngredient: "water", weight: 100 },
-        { nameIngredient: "eggs", weight: 100 },
-        { nameIngredient: "sugar", weight: 50 },
-        { nameIngredient: "salt", weight: 20 },
-        { nameIngredient: "flour", weight: 400 },
-        { nameIngredient: "oil", weight: 100 },
-        { nameIngredient: "bananas", weight: 200 }
+        { nameIngredient: "milk", weight: 500, isVegans: false },
+        { nameIngredient: "water", weight: 100, isVegans: false },
+        { nameIngredient: "eggs", weight: 100, isVegans: false },
+        { nameIngredient: "sugar", weight: 50, isVegans: false },
+        { nameIngredient: "salt", weight: 20, isVegans: false },
+        { nameIngredient: "flour", weight: 400, isVegans: false },
+        { nameIngredient: "oil", weight: 100, isVegans: false },
+        { nameIngredient: "bananas", weight: 200, isVegans: true }
     ],
     priceCooking: 0,
     priceSale: 350
@@ -107,14 +107,14 @@ let pancakesWithBananas = {
 let pancakesWithChocolate = {
     name: "Блины с шоколадом",
     ingredients: [
-        { nameIngredient: "milk", weight: 500 },
-        { nameIngredient: "water", weight: 100 },
-        { nameIngredient: "eggs", weight: 100 },
-        { nameIngredient: "sugar", weight: 50 },
-        { nameIngredient: "salt", weight: 20 },
-        { nameIngredient: "flour", weight: 400 },
-        { nameIngredient: "oil", weight: 100 },
-        { nameIngredient: "chocolate", weight: 200 }
+        { nameIngredient: "milk", weight: 500, isVegans: false },
+        { nameIngredient: "water", weight: 100, isVegans: false },
+        { nameIngredient: "eggs", weight: 100, isVegans: false },
+        { nameIngredient: "sugar", weight: 50, isVegans: false },
+        { nameIngredient: "salt", weight: 20, isVegans: false },
+        { nameIngredient: "flour", weight: 400, isVegans: false },
+        { nameIngredient: "oil", weight: 100, isVegans: false },
+        { nameIngredient: "chocolate", weight: 200, isVegans: false }
     ],
     priceCooking: 0,
     priceSale: 400
@@ -195,7 +195,7 @@ console.log(updatedMeals)
 // Определите, есть ли в меню хоть одно вегетарианское блюдо, используя `some`.
 let isContainsVegansMeals = meals.some(function (item, index, arr) {
     let checkProduct = item.ingredients.some(function (item, index, arr) {
-        return item.nameIngredient == "bananas";
+        return item.isVegans == true;
     })
     return checkProduct;
 });
@@ -205,7 +205,7 @@ console.log(`Есть ли вегетарианское блюдо ${isContainsV
 //Определите, полностью ли у вас вегетарианское меню с помощью `every`.
 let isContainsAllVegansMeals = meals.every(function (item, index, arr) {
     let checkProduct = item.ingredients.some(function (item, index, arr) {
-        return item.nameIngredient == "bananas";
+        return item.isVegans == true;
     })
     return checkProduct;
 });
@@ -215,7 +215,7 @@ console.log(`Полностью ли вегетарианское меню ${isC
 //Создайте массив с вегетарианскими блюдами с помощью filter.
 let vegansMeals = meals.filter(function (item, index, arr) {
     let checkProduct = item.ingredients.some(function (item, index, arr) {
-        return item.nameIngredient == "bananas";
+        return item.isVegans == true;
     });
     return checkProduct;
 });
