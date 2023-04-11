@@ -220,7 +220,7 @@ let ingredientsPrices1 = {
         isVegans: true
     },
     paper: {
-        price: 200,
+        price: 100,
         isVegans: true
     }
 };
