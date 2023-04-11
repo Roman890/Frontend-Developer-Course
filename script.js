@@ -220,7 +220,7 @@ let ingredientsPrices1 = {
         isVegans: true
     },
     paper: {
-        price: 200,
+        price: 150,
         isVegans: true
     }
 };
@@ -277,7 +277,7 @@ let vegansMeals = meals.filter(function (item, index, arr) {
     });
 });
 
-console.log(`Массив с вегетарианскими блюдами`)
+console.log(`Массив только с вегетарианскими блюдами`)
 vegansMeals.forEach(function (item, index, arr) {
     console.log(item);
 });
