@@ -120,6 +120,19 @@ let pancakesWithChocolate = {
     priceSale: 400
 };
 
+let summerSalad = {
+    name: "Летний салат",
+    ingredients: [
+        { nameIngredient: "salad", weight: 300 },
+        { nameIngredient: "tomatoes", weight: 200 },
+        { nameIngredient: "cucumber", weight: 200 },
+        { nameIngredient: "onion", weight: 50 },
+        { nameIngredient: "paper", weight: 150 }
+    ],
+    priceCooking: 0,
+    priceSale: 200
+};
+
 // массив из блюд
 let meals = [
     pancakesWithJam,
@@ -128,7 +141,8 @@ let meals = [
     pancakesWithMeat,
     pancakesWithSalmon,
     pancakesWithBananas,
-    pancakesWithChocolate
+    pancakesWithChocolate,
+    summerSalad
 ];
 
 //Отдельно создайте объекты хранящие стоимость этих ингредиентов ( указана за 1000 граммов)
@@ -188,6 +202,26 @@ let ingredientsPrices1 = {
     chocolate: {
         price: 60,
         isVegans: false
+    },
+    salad: {
+        price: 80,
+        isVegans: true
+    },
+    onion: {
+        price: 80,
+        isVegans: true
+    },
+    cucumber: {
+        price: 160,
+        isVegans: true
+    },
+    tomatoes: {
+        price: 180,
+        isVegans: true
+    },
+    paper: {
+        price: 200,
+        isVegans: true
     }
 };
 
@@ -220,30 +254,27 @@ console.log(updatedMeals)
 
 // Определите, есть ли в меню хоть одно вегетарианское блюдо, используя `some`.
 let isContainsVegansMeals = meals.some(function (item, index, arr) {
-    let checkProduct = item.ingredients.some(function (item, index, arr) {
-        return ingredientsPrices1[item.nameIngredient].isVegans == true;
-    })
-    return checkProduct;
+    return item.ingredients.every(function (item, index, arr) {
+        return ingredientsPrices1[item.nameIngredient].isVegans;
+    });
 });
 
 console.log(`Есть ли вегетарианское блюдо ${isContainsVegansMeals}`)
 
 //Определите, полностью ли у вас вегетарианское меню с помощью `every`.
 let isContainsAllVegansMeals = meals.every(function (item, index, arr) {
-    let checkProduct = item.ingredients.some(function (item, index, arr) {
-        return ingredientsPrices1[item.nameIngredient].isVegans == true;
-    })
-    return checkProduct;
+    return item.ingredients.every(function (item, index, arr) {
+        return ingredientsPrices1[item.nameIngredient].isVegans;
+    });
 });
 
 console.log(`Полностью ли вегетарианское меню ${isContainsAllVegansMeals}`)
 
 //Создайте массив с вегетарианскими блюдами с помощью filter.
 let vegansMeals = meals.filter(function (item, index, arr) {
-    let checkProduct = item.ingredients.some(function (item, index, arr) {
-        return ingredientsPrices1[item.nameIngredient].isVegans == true;
+    return item.ingredients.some(function (item, index, arr) {
+        return ingredientsPrices1[item.nameIngredient].isVegans;
     });
-    return checkProduct;
 });
 
 console.log(`Массив с вегетарианскими блюдами`)
