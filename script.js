@@ -272,7 +272,7 @@ console.log(`Полностью ли вегетарианское меню ${isC
 
 //Создайте массив с вегетарианскими блюдами с помощью filter.
 let vegansMeals = meals.filter(function (item, index, arr) {
-    return item.ingredients.some(function (item, index, arr) {
+    return item.ingredients.every(function (item, index, arr) {
         return ingredientsPrices1[item.nameIngredient].isVegans;
     });
 });
