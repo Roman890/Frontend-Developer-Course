@@ -1,0 +1,78 @@
+{
+    "milk": {
+        "price": 80,
+        "isVegans": false
+    },
+    "water": {
+        "price": 50,
+        "isVegans": false
+    },
+    "eggs": {
+        "price": 70,
+        "isVegans": false
+    },
+    "sugar": {
+        "price": 70,
+        "isVegans": false
+    },
+    "salt": {
+        "price": 40,
+        "isVegans": false
+    },
+    "flour": {
+        "price": 110,
+        "isVegans": false
+    },
+    "oil": {
+        "price": 100,
+        "isVegans": false
+    },
+    "jam": {
+        "price": 60,
+        "isVegans": true
+    },
+    "cheese": {
+        "price": 300,
+        "isVegans": false
+    },
+    "cottageCheese": {
+        "price": 300,
+        "isVegans": false
+    },
+    "meat": {
+        "price": 700,
+        "isVegans": false
+    },
+    "salmon": {
+        "price": 850,
+        "isVegans": false
+    },
+    "bananas": {
+        "price": 80,
+        "isVegans": true
+    },
+    "chocolate": {
+        "price": 60,
+        "isVegans": false
+    },
+    "salad": {
+        "price": 80,
+        "isVegans": true
+    },
+    "onion": {
+        "price": 80,
+        "isVegans": true
+    },
+    "cucumber": {
+        "price": 160,
+        "isVegans": true
+    },
+    "tomatoes": {
+        "price": 180,
+        "isVegans": true
+    },
+    "paper": {
+        "price": 150,
+        "isVegans": true
+    }
+}
