@@ -1,9 +1,9 @@
 let meals;
-fetch('/menu.json')
+fetch('menu.json')
     .then(response => response.json())
     .then(data => {
         meals = data;
-        return fetch('/ingredients.json')
+        return fetch('ingredients.json')
     })
     .then(response => response.json())
     .then(ingredientsPrices => {
